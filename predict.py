@@ -49,6 +49,7 @@ def predict(model):
     print('\nFinished predicting\n')
 
     helper.view_classify(image,probs,classes)
+    return
     
 
 # Handles for initiating from predict.py

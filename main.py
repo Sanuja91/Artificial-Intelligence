@@ -1,36 +1,13 @@
 import helper
 import train
 import torch
+import predict
 import os
 import numpy as np
 from torch import nn
 from torch import optim
 import torch.nn.functional as F
 from torchvision import datasets, transforms, models
-
-def predict():
-    return print('To be done')
-
-def test_network():
-    return print('To be done')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 flag = False
@@ -47,20 +24,20 @@ while (flag != True):
     action = input("\nWhat would you like to do? Actions include: \n{}\n".format(actions))
     if(action == actions[0]):
         if(model != None):
-            predict(model)
+            predict.predict(model)
         else:
-            print('\nNo model has been selected \n')
+            predict.predict(None)
 
     elif(action == actions[1]):
         model = helper.build_new_network()
 
     elif(action == actions[2]):
         if(model != None):
-            train.train_network(model)
+            model = train.train_network(model)
         else:
-            print('\nNo model has been selected \n')
+            model = train.train_network(None)
 
-    elif(action == actions[6]):
+    elif(action == actions[3]):
         flag = False
 
     else:

@@ -86,7 +86,8 @@ def train_network(model):
                         model.train()
     print("\n\nTraining finished\n")
     helper.save_checkpoint(model)
+    return model
     
 # Handles for initiating from train.py
 if __name__ == "__main__":
-    train_network(None)
+    model = train_network(None)
